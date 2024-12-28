@@ -13,7 +13,7 @@
         body {
            background-color: #fffff8;
            color: rgb(39 26 26);
-           font-size: 2rem;
+           font-size: 1.8rem;
            line-height: 1.5;
            font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -46,19 +46,14 @@
             margin: 1rem;
         }
 
-        header {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           padding: 1rem 2rem;
-        }
         header h1 {
             font-size: 2rem;
             margin-right: 1rem;
         }
         #intro img {
+            display: inline-block;;
             max-width: 100%;
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
 
         section {
@@ -159,19 +154,20 @@
             background-repeat: no-repeat;
             background-size: contain;
             left: 0;
-            top: 2px;
+            top: 20px;
             width: 12px;
             height: 12px;
         }
         .program-list li:first-child:before{
-            top: 15px;
+            top: 25px;
         }
         .program-list li:last-child:before{
-            height: 6px;
+            height: 25px;
         }
 
-        .program-list li:first-child:after { 
-            background-color: transparent;
+     
+        .program-list li:only-child::before {
+            display: none;
         }
 
         .program-list span {
@@ -179,12 +175,12 @@
         }
 
         .program-time {
-            flex: 1;
             margin-right: 1rem;
         }
         .program-activity {
-            flex: 100%;
+            
         }
+
         .people-container {
             display: flex;
             flex-wrap: wrap;
@@ -195,6 +191,9 @@
         .person {
             margin: 1rem;
             flex: 1 auto;
+        }
+        .person p {
+            margin: .5rem 0;
         }
 
         .person img {
@@ -225,49 +224,42 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="quattrocento-regular">Lise Fredrikke & Hans Kristian</h1>
-        <a class="rsvp-button" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
-    </header>
-
     <section id="intro">
         <div class="inner">
-            <h1 class="quattrocento-bold">Vi gifter oss!</h1>
-            <img src="assets/liseoghk.jpg" alt="">
-            <h2>23. august 2025</h2>
-            <p>Tiårets kuleste bryllup skjer nest siste helga i august 2025. Kommer du? Svarfrist 1. mai 2025.</p>
+            <h1>Vi gifter oss 23. august 2025!</h1>
+            <p>Nest siste helga i august blir tiårets kuleste bryllup arrangert på Ytterbakke Gård i Romsdalen. Kommer du? Svarfrist 1. mai 2025.</p>
             <a class="rsvp-button" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
+
+            <img src="assets/liseoghk.jpg" alt="">
         </div>
     </section>
 
-    <section id="programmet">
+    <section id="program">
         <div class="inner">
-            <h2>Programmet</h2>
+            <h2>Program</h2>
             <div class="program-container">
-                <h3 class="program-date">Fredag 21. august</h3>
+                <h3 class="program-date">Fredag 21. august, Fonnagata 1</h3>
                 <ul class="program-list">
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">skjf afpasjkf asfkasjf als f</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">skjf afpasjkf asfkasjf als f daf asfdfa afasf</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">skjf afpasjkf asfkasjf al</span></li>
+                    <li><span class="program-time">17:00 - 22:00</span><span class="program-activity">Grilling og leker</span></li>
                 </ul>
             </div>
             <div class="program-container">
-                <h3 class="program-date">Lørdag 22. august</h3>
+                <h3 class="program-date">Lørdag 22. august, Ytterbakke Gård</h3>
                 <ul class="program-list">
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken slkdj sdflkas fijsfasdf sfkj adfslkdfjs fasdlfkjsd akj asf alfkja sfalsdfkj faslfkjas</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken slkdj sdflkas fijsfasdf sfkj adfslkdfjs fasdlfkjsd faslfkjas</span></li>
-                </ul>
-            </div>
-            <div class="program-container">
-                <h3 class="program-date">Søndag 23. august</h3>
-                <ul class="program-list">
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
-                    <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
+                    <li><span class="program-time">12:00</span><span class="program-activity">Vielse</span></li>
+                    <li><span class="program-time">12:30</span><span class="program-activity">Foto</span></li>
+                    <li><span class="program-time">13:00</span><span class="program-activity">Brudekake og bobler</span></li>
+                    <li><span class="program-time">14:00</span><span class="program-activity">Bryllupsbilder</span></li>
+                    <li><span class="program-time">13:30</span><span class="program-activity">Mingling</span></li>
+                    <li><span class="program-time">15:30</span><span class="program-activity">Mottakelse</span></li>
+                    <li><span class="program-time">16:30</span><span class="program-activity">Middag</span></li>
+                    <li><span class="program-time">18:00</span><span class="program-activity">Dessert</span></li>
+                    <li><span class="program-time">20:30</span><span class="program-activity">Kakebord</span></li>
+                    <li><span class="program-time">21:00</span><span class="program-activity">Brudevals</span></li>
+                    <li><span class="program-time">21:30</span><span class="program-activity">Polynese</span></li>
+                    <li><span class="program-time">22:00</span><span class="program-activity">Dansegulv</span></li>
+                    <li><span class="program-time">00:00</span><span class="program-activity">Nattmat</span></li>
+
                 </ul>
             </div>
         </div>

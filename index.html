@@ -15,17 +15,12 @@
            color: rgb(39 26 26);
            font-size: 2rem;
            line-height: 1.5;
-        }
-        
-        .quattrocento-regular {
-            font-family: "Quattrocento", serif;
-            font-weight: 400;
-            font-style: normal;
+           font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        .quattrocento-bold, h1, h2, h3, h4, h5 {
-            font-family: "Quattrocento", serif;
-            font-weight: 700;
+        h1, h2, h3, h4, h5 {
+            font-family: sans-serif;
+            font-weight: bold;
             font-style: normal;
             text-shadow: -1px -1px 10px #ffffff;
         }
@@ -69,6 +64,19 @@
         section {
             text-align: center;
             padding: 2rem 1rem 3rem 1rem;
+            position: relative;
+        }
+        section::after {
+            content: "";
+            width: 80vw;
+            max-width: 400px;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.161);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            z-index: 2;
         }
         section h2 {
             margin-bottom: 1rem;
@@ -94,7 +102,6 @@
 
         .program-container {
             text-align: left;
-            
             margin: 1rem;
         }
         .program-title {
@@ -186,7 +193,8 @@
         }
 
         .person {
-            
+            margin: 1rem;
+            flex: 1 auto;
         }
 
         .person img {
@@ -196,6 +204,21 @@
         #lokasjon iframe {
             /*filter: grayscale(50%) invert(95%);*/
             filter: hue-rotate(-40deg);
+        }
+
+        .menu-container ul {
+            margin: 0 0 2rem 0;
+        }
+
+        .big-rsvp-link {
+            font-size: 5rem;
+            text-decoration: underline;
+            display: inline-block;
+            padding: 0rem 1rem;
+        }
+        .big-rsvp-link:hover {
+            background: black;
+            color: white;
         }
 
     </style>
@@ -212,7 +235,7 @@
             <h1 class="quattrocento-bold">Vi gifter oss!</h1>
             <img src="assets/liseoghk.jpg" alt="">
             <h2>23. august 2025</h2>
-            <p>Tiårets kuleste bryllup skjer nest siste helga i august 2025. Kommer du? </p>
+            <p>Tiårets kuleste bryllup skjer nest siste helga i august 2025. Kommer du? Svarfrist 1. mai 2025.</p>
             <a class="rsvp-button" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
         </div>
     </section>
@@ -250,6 +273,10 @@
         </div>
     </section>
 
+    <!--<section id="bilder">
+
+    </section>-->
+
 
     <section id="dresscode">
         <div class="inner">
@@ -258,8 +285,8 @@
         </div>
     </section>
 
-    <section id="menneskene">
-            <h2>Menneskene</h2>
+    <section id="kontakt">
+            <h2>Kontakt</h2>
             <div class="people-container">
                 <div class="person">
                     <img src="assets/lise.jpg" alt="">
@@ -336,6 +363,13 @@
         </div>
     </section>
 
+    <section id="gaver">
+        <div class="inner">
+            <h2>Gaveønsker</h2>
+            <p>Tekst om gaver obladi oblada</p>
+        </div>
+    </section>
+
     <section id="overnatting">
         <div class="inner">
             <h2>Overnatting</h2>
@@ -346,6 +380,20 @@
                 <li>Camping: Sogge Camping</li>
                 <li>Camping: Trollstigen Resort</li>
             </ul>
+        </div>
+    </section>
+
+    <section id="barn">
+        <div class="inner">
+            <h2>Barn</h2>
+            <p>Sorry, kids får ikke komme. Bortsett fra Juni Baby da </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="inner">
+            <p>Vi gleder oss til å se deg!</p>
+            <a class="big-rsvp-link" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
         </div>
     </section>
     

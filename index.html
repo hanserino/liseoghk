@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lise Fredrikke og Hans Kristian</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        body {
+           background-color: #f2f2f2;
+           color: black;
+           font-size: 1.5rem;
+        }
+        a {
+            color: black;
+        }
+        header {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           padding: 1rem 2rem;
+        }
+
+        section {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .rsvp-button {
+            border: 2px solid #000;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 0;        
+        }
+
+        .rsvp-button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .program-container {
+            border: 1px solid black;
+            text-align: left;
+            padding-left: 2rem;
+            margin: 1rem;
+        }
+        .program-title {
+            font-size: 1.5rem;
+        }
+
+        .program-date {
+            
+        }
+
+        .program-list {
+            border: 1px solid green;
+            text-align: left;
+        }
+
+        .program-list li {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: flex-start;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 1rem;
+        }
+
+        .program-list li::before {
+            content: "";
+            width: .5rem;
+            height: .5rem;
+            border-radius: 50%;
+            background: black;
+            position: absolute;
+            top: 1rem;
+            left: .5rem;
+        }
+        .program-list li::after {
+            content: "";
+            position: absolute;
+            left: 0.7rem;
+            bottom: 50%;
+            width: 0.1rem;
+            height: 100%;
+            background: black;
+        }
+        .program-list li:first-child:after { 
+            background-color: transparent;
+        }
+
+        .program-list span {
+            
+        }
+
+        .program-time {
+            flex: 1;
+            margin-right: 1rem;
+        }
+        .program-activity {
+            border: 1px solid;
+            flex: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lise Fredrikke & Hans Kristian</h1>
+        <a class="rsvp-button" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
+    </header>
+
+    <section>
+        <h1>Vi gifter oss!</h1>
+        <img src="assets/liseoghk.jpg" alt="">
+        <h2>23. august 2025</h2>
+        <p>Tiårets kuleste bryllup skjer nest siste helga i august 2025. Kommer du? </p>
+        <a class="rsvp-button" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
+    </section>
+
+    <section>
+        <h2>Program</h2>
+        <div class="program-container">
+            <h3 class="program-date">Fredag 21. august</h3>
+            <ul class="program-list">
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">skjf afpasjkf asfkasjf als f</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">skjf afpasjkf asfkasjf als f daf asfdfa afasf</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">skjf afpasjkf asfkasjf al</span></li>
+            </ul>
+        </div>
+        <div class="program-container">
+            <h3 class="program-date">Lørdag 22. august</h3>
+            <ul class="program-list">
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken slkdj sdflkas fijsfasdf sfkj adfslkdfjs fasdlfkjsd akj asf alfkja sfalsdfkj faslfkjas</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken slkdj sdflkas fijsfasdf sfkj adfslkdfjs fasdlfkjsd faslfkjas</span></li>
+            </ul>
+        </div>
+        <div class="program-container">
+            <h3 class="program-date">Søndag 23. august</h3>
+            <ul class="program-list">
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
+                <li><span class="program-time">14:00</span><span class="program-activity">Møte på kirken</span></li>
+            </ul>
+        </div>
+    </section>
+
+
+ 
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>

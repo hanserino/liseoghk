@@ -1,0 +1,33 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Base font size */
+}
+
+body {
+    line-height: 1.5; /* Improve readability */
+    font-family: Arial, sans-serif; /* Set a default font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal; /* Remove boldness from headings */
+}
+
+ul, ol {
+    list-style: none; /* Remove default list styles */
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+}
+
+img {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}

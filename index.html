@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lise Fredrikke og Hans Kristian</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="reset.css">
     <style>
+
         body {
            background-color: #fffff8;
            color: rgb(39 26 26);
-           font-size: 1.8rem;
+           font-size: 1.2rem;
            line-height: 1.5;
            font-family: Georgia, 'Times New Roman', Times, serif;
         }
@@ -22,45 +19,124 @@
             font-family: sans-serif;
             font-weight: bold;
             font-style: normal;
-            text-shadow: -1px -1px 10px #ffffff;
         }
 
         h1 {
-            font-size: 6rem;
+            font-size: 4rem;
             line-height: 1.2;
         }
 
         h2 {
-            font-size: 5rem;
+            font-size: 3rem;
         }
         
         h3 {
-            font-size: 1.85rem;
+            font-size: 1.5rem;
         }
         
         a {
             color: black;
+        }
+        em {
+            font-weight: bold;
+            font-style: normal;
         }
 
         p {
             margin: 1rem;
         }
 
-        header h1 {
-            font-size: 2rem;
-            margin-right: 1rem;
+        header {
+            min-height: 100vh;
+            background: url('assets/liseoghk.jpg') no-repeat top center;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            overflow: hidden;
         }
-        #intro img {
-            display: inline-block;;
-            max-width: 100%;
-            margin: 2rem 0;
+
+        @media (min-width: 800px) {
+            header {
+                background-position: 0 20%;
+                max-height: 80vh;
+            }
         }
+
+        @media (min-width: 1200px) {
+            header {
+                background-position: 0 10%;
+            }
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        .header-title span {
+            font-size: .7em;
+        }
+
+
+        .header-intro {
+            max-width: 600px;
+        }
+
+        .header-intro p {
+            display: block;
+            margin: 0;
+            background: black;
+            color: white;
+            padding: .5rem;
+        }
+
+        header .rsvp-button {
+            position: relative;
+            background: black;
+            color: white;
+            margin-top: 2rem;
+            border: 3px solid black;
+        }
+        header .rsvp-button:hover {
+            font-style: italic;
+            border: 3px dashed white;
+            text-decoration: underline;
+        }
+        header .rsvp-button:active {
+            bottom: -2px;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                font-size: 1.4rem;
+                line-height: 1.5;
+            }
+
+            h1 {
+                font-size: 6rem;
+                line-height: 1.2;
+            }
+
+            h2 {
+                font-size: 5rem;
+            }
+            
+            h3 {
+                font-size: 1.85rem;
+            }        
+        }
+
 
         section {
             text-align: center;
             padding: 2rem 1rem 3rem 1rem;
             position: relative;
         }
+
         section::after {
             content: "";
             width: 80vw;
@@ -124,14 +200,6 @@
         }
 
         .program-list li::before {
-            /*content: "";
-            width: .5rem;
-            height: .5rem;
-            border-radius: 50%;
-            background: black;
-            position: absolute;
-            top: 1rem;
-            left: .5rem;*/
             background-color:black;
             width: 2px;
             content: '';
@@ -141,13 +209,6 @@
             left: 5px;
         }
         .program-list li::after {
-            /*content: "";
-            position: absolute;
-            left: 0.7rem;
-            bottom: 50%;
-            width: 0.1rem;
-            height: 100%;
-            background: black;*/
             content: '';
             position: absolute;
             background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'><circle stroke='none' fill='000000' cx='16' cy='16' r='10'></circle></svg>");
@@ -220,19 +281,112 @@
             color: white;
         }
 
+        .acommodation-list {
+            list-style: circle;
+            text-align: left;
+            padding-left: 2rem;
+        }
+        .acommodation-list a {
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 5rem 0 0 0;
+            position: relative;
+        }
+
+        nav {
+            min-height: 100vh;
+        }
+
+        nav ul {
+
+        }
+
+        nav a {
+            display: block;
+            padding: .7rem 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.161);
+        }
+      
+
+        nav a:hover {
+            background: black;
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 600px) {
+
+            footer {
+                padding: 2rem 0;
+                min-height: 100vh;
+                display: flex;
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+
+            nav {
+                min-height: 1vh;
+            }
+            nav ul {
+
+            }
+            nav a {
+                display: block;
+                padding: .7rem 1rem;
+                border: none;
+            }
+
+            nav a:hover {
+                background: transparent;
+                color: black;
+                text-decoration: underline;
+            }
+        }
+
+        .hamburger {
+            background: transparent;
+            width: 2rem;
+            height: 1.7rem;
+            display: flex !important;
+            align-content: stretch;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+            text-decoration: none;
+            padding: 0 !important;
+            position: absolute;
+            top: 1.3rem;
+            left: 1rem;
+        }
+        .hamburger:hover {
+            background-color: transparent !important;
+        }
+    
+        .hamburger span {
+            background: black;
+            width: 100%;
+            height: 3px;
+            display: block;
+        }
+
     </style>
 </head>
 
 <body>
-    <section id="intro">
-        <div class="inner">
-            <h1>Vi gifter oss 23. august 2025!</h1>
+    <header id="intro">
+            <a class="hamburger" href="#nav" title="Vis navigasjonsmeny"><span></span><span></span><span></span></a>
+            <h1 class="header-title">Vi gifter oss! <br /> <span>23. aug 2025</span></h1>
+            <div class="header-intro">
             <p>Nest siste helga i august blir tiårets kuleste bryllup arrangert på Ytterbakke Gård i Romsdalen. Kommer du? Svarfrist 1. mai 2025.</p>
             <a class="rsvp-button" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
-
-            <img src="assets/liseoghk.jpg" alt="">
-        </div>
-    </section>
+            </div>
+    </header>
 
     <section id="program">
         <div class="inner">
@@ -265,20 +419,20 @@
         </div>
     </section>
 
-    <!--<section id="bilder">
-
-    </section>-->
-
 
     <section id="dresscode">
         <div class="inner">
             <h2>Dresscode</h2>
-            <p>When it comes to wedding dress codes, it's essential to strike a balance between elegance and comfort, ensuring that guests feel both stylish and at ease. For a formal wedding, men typically wear a suit and tie, while women may opt for a long evening gown or a sophisticated cocktail dress. Colors and patterns can vary, but classic shades like navy, black, or jewel tones are always a safe choice. </p>
+            <p><em>For menn:</em> Mørk dress med slips eller sløyfe. Alternativt er bunad eller folkedrakt også hjertelig velkommen.</p>
+            <p><em>For kvinner:</em> Elegante kjoler som kan være lange eller knelange, pene buksedresser eller bunad.</p>
+            <p>Husk at august i Romsdalen kan by på varierte temperaturer, så ta gjerne med en jakke eller sjal for kvelden. Hvis du ønsker å bruke praktiske sko for eventuell utendørs feiring, anbefaler vi et skoskifte senere på kvelden.</p>
+            <p>Vi setter pris på at dere gjør en liten ekstra innsats for å kle dere i tråd med denne kleskoden - det vil være med på å gjøre dagen enda mer spesiell.</p>
+            <p>Tusen takk for at dere deler denne dagen med oss! Vi gleder oss til å se dere stråle i deres vakreste antrekk.</p></p>
         </div>
     </section>
 
-    <section id="kontakt">
-            <h2>Kontakt</h2>
+    <section id="kontaktpersoner">
+            <h2>Kontaktpersoner</h2>
             <div class="people-container">
                 <div class="person">
                     <img src="assets/lise.jpg" alt="">
@@ -366,19 +520,12 @@
         <div class="inner">
             <h2>Overnatting</h2>
             <p>Det er mange steder man kan overnatte i Rauma. Her er noen forslag:</p>
-            <ul>
-                <li>AirBnb, Ida Kjørholt</li>
-                <li>AirBnb, Pontus Stigberg</li>
-                <li>Camping: Sogge Camping</li>
-                <li>Camping: Trollstigen Resort</li>
+            <ul class="acommodation-list">
+                <li><a target="_blank" href="https://www.airbnb.no/rooms/916401000543719288?check_in=2025-01-10&check_out=2025-01-17&guests=1&adults=1&s=67&unique_share_id=e4339e76-dcd7-41cc-8990-29f96db48450"><em>Villa Vertical:</em></a> Airbnb, Gamle Romsdalsvegen 97, ca 30 min gåavstand fra Ytterbakke.</li>
+                <li><a target="_blank" href="tel:+4799690430" title="Ring Ida"><em>Ida Kjørholt: </em></a>Privat, sentrumsnært, ca 40 min gåavstand fra Ytterbakke. Ida tlf: +47 996 90 430</a></li>
+                <li><a target="_blank" href="https://soggebru-camping-andalsnes.ibooked.no/"><em>Soggebru Camping: </em></a>Campingplass, ca 500 m fra Ytterbakke Gård</li>
+                <li><a target="_blank" href="https://www.trollstigenresort.no/"><em>Trollstigen Resort: </em></a>Campingplass, ca 1 km fra Ytterbakke Gård</li>
             </ul>
-        </div>
-    </section>
-
-    <section id="barn">
-        <div class="inner">
-            <h2>Barn</h2>
-            <p>Sorry, kids får ikke komme. Bortsett fra Juni Baby da </p>
         </div>
     </section>
 
@@ -388,6 +535,21 @@
             <a class="big-rsvp-link" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
         </div>
     </section>
+
+    <footer id="nav">
+        <nav>
+            <a class="hamburger" href="#" title="Lukk navigasjonsmeny"><span></span><span></span><span></span></a>
+            <ul>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#dresscode">Dresscode</a></li>
+                <li><a href="#kontaktpersoner">Kontaktpersoner</a></li>
+                <li><a href="#meny">Meny</a></li>
+                <li><a href="#lokasjon">Lokasjon</a></li>
+                <li><a href="#gaver">Gaver</a></li>
+                <li><a href="#overnatting">Overnatting</a></li>
+            </ul>
+        </nav>
+    </footer>
     
 </body>
 </html>

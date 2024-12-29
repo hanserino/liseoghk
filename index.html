@@ -195,7 +195,7 @@
             position: relative;
         }
 
-        section.center {
+        .center {
             display: flex;
             flex-direction: column;
             align-content: center;
@@ -370,10 +370,19 @@
             text-align: left;
             padding-left: 2rem;
         }
+        .acommodation-list li {
+            margin: 1rem 0;
+        }
         .acommodation-list a {
             text-decoration: underline;
         }
 
+        @media (min-width: 800px) {
+            .acommodation-list {
+                max-width: 600px;
+                margin: 2rem auto 0 auto;
+            }
+        }
         
         footer {
             padding: 5rem 0 0 0;
@@ -631,7 +640,7 @@
     <section id="gaver">
         <div class="inner">
             <h2>Gaver</h2>
-            <p>Alt vi ønsker oss er at du kommer. Vi hverken trenger eller ønsker oss noe annet enn det. Vi skriver ikke dette for å være hippe. Vi mener det. </p>
+            <p>Alt vi ønsker oss er at du kommer. Vi hverken trenger eller ønsker oss noe annet enn det. Vi skriver ikke dette for å være hippe - vi mener det. </p>
         </div>
     </section>
 

@@ -4,20 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lise Fredrikke og Hans Kristian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <style>
-
+        
         body {
            background-color: #fffff8;
            color: rgb(39 26 26);
            font-size: 1.2rem;
            line-height: 1.5;
-           font-family: Georgia, 'Times New Roman', Times, serif;
         }
 
-        h1, h2, h3, h4, h5 {
-            font-family: sans-serif;
-            font-weight: bold;
+        body, .libre-baskerville-regular {
+            font-family: "Libre Baskerville", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        em, .libre-baskerville-bold {
+            font-family: "Libre Baskerville", serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .italic, .libre-baskerville-regular-italic {
+            font-family: "Libre Baskerville", serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        h1, h2, h3, h4, h5, .courgette-regular{
+            font-family: "Courgette", serif;
+            font-weight: 400;
             font-style: normal;
         }
 
@@ -46,73 +66,9 @@
             margin: 1rem;
         }
 
-        header {
-            min-height: 100vh;
-            background: url('assets/liseoghk.jpg') no-repeat top center;
-            background-size: cover;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            overflow: hidden;
-        }
-
-        @media (min-width: 800px) {
-            header {
-                background-position: 0 20%;
-                max-height: 80vh;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            header {
-                background-position: 0 10%;
-            }
-        }
-
-        .header-title {
-            font-size: 2.5rem;
-            line-height: 1;
-        }
-
-        .header-title span {
-            font-size: .7em;
-        }
-
-
-        .header-intro {
-            max-width: 600px;
-        }
-
-        .header-intro p {
-            display: block;
-            margin: 0;
-            background: black;
-            color: white;
-            padding: .5rem;
-        }
-
-        header .rsvp-button {
-            position: relative;
-            background: black;
-            color: white;
-            margin-top: 2rem;
-            border: 3px solid black;
-        }
-        header .rsvp-button:hover {
-            font-style: italic;
-            border: 3px dashed white;
-            text-decoration: underline;
-        }
-        header .rsvp-button:active {
-            bottom: -2px;
-        }
-
         @media (min-width: 600px) {
             body {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 line-height: 1.5;
             }
 
@@ -129,6 +85,104 @@
                 font-size: 1.85rem;
             }        
         }
+        
+        header {
+            min-height: 100dvh;
+            background: url('assets/liseoghk.jpg') no-repeat top center;
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            overflow: hidden;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            background: transparent;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.9) 100%)
+
+        }
+
+        header  .hamburger span {
+            background-color: white;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            body {
+                height: -webkit-fill-available;
+            }
+        }
+        .header-title, header .hamburger, .header-intro {
+            z-index: 2;
+        }
+        .header-title {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        .header-title span {
+            font-size: .5em;
+        }
+
+        @media (min-width: 800px) {
+            header {
+                background-position: 0 0%;
+                max-height: 80vh;
+                padding: 3rem 0 2rem 0;
+            }
+            .header-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            header {
+                background-position: 0 10%;
+                padding: 4rem 0 2rem 0;
+            }
+            .header-title {
+                font-size: 4rem;
+            }
+        }   
+
+
+        .header-intro {
+            max-width: 600px;
+        }
+
+        .header-intro p {
+            display: block;
+            margin: 0;
+            padding: .5rem;
+        }
+
+        header .rsvp-button {
+            position: relative;
+            background: black;
+            color: white;
+            margin-top: 2rem;
+            border: 2px solid transparent;
+          
+            
+        }
+        header .rsvp-button:hover {
+            text-decoration: underline;
+            border: 2px solid white;      
+            
+        }
+        header .rsvp-button:active {
+            bottom: -2px;
+        }
+
 
 
         section {
@@ -237,7 +291,9 @@
 
         .program-time {
             margin-right: 1rem;
+            min-width: 4rem;
         }
+
         .program-activity {
             
         }
@@ -250,11 +306,24 @@
         }
 
         .person {
-            margin: 1rem;
-            flex: 1 auto;
+            padding: 1rem;
+            flex: auto;
+            width: 50%;
         }
+        .person a {
+            text-decoration: underline;
+        }
+     
+
+        @media (min-width: 600px) {
+            .person {
+                width: calc(100%/3);
+            } 
+        }
+
         .person p {
-            margin: .5rem 0;
+            margin: .2rem 0;
+            font-size: .8em;
         }
 
         .person img {
@@ -383,9 +452,10 @@
             <a class="hamburger" href="#nav" title="Vis navigasjonsmeny"><span></span><span></span><span></span></a>
             <h1 class="header-title">Vi gifter oss! <br /> <span>23. aug 2025</span></h1>
             <div class="header-intro">
-            <p>Nest siste helga i august blir tiårets kuleste bryllup arrangert på Ytterbakke Gård i Romsdalen. Kommer du? Svarfrist 1. mai 2025.</p>
-            <a class="rsvp-button" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
+                <p>Nest siste helg i august blir tiårets kuleste bryllup arrangert på Ytterbakke Gård i Romsdalen. Kommer du? Svarfrist 1. mai 2025.</p>
+                <a class="rsvp-button" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
             </div>
+            <div class="overlay"></div>
     </header>
 
     <section id="program">
@@ -438,40 +508,40 @@
                     <img src="assets/lise.jpg" alt="">
                     <h3>Lise Fredrikke</h3>
                     <p>Brud</p>
-                    <p>Tlf: +47 928 41 559</p>
+                    <p>Tlf: <a href="tel:+4795230811">+47 952 30 811</a></p>
                 </div>
                 <div class="person">
                     <img src="assets/hans.jpg" alt="">
-                    <h3>Hans Kristian Smedsrød</h3>
+                    <h3>Hans Kristian</h3>
                     <p>Brudgom</p>
-                    <p>Tlf: +47 928 41 559</p>
+                    <p>Tlf: <a href="tel:+4792841559">+47 928 41 559</a></p>
                 </div>
                 <div class="person">
                     <img src="assets/askild.jpg" alt="">
-                    <h3>Askild Vatnbakk Larsen</h3>
-                    <p>Rolle: Best man</p>
-                    <p>Tlf: +47 928 41 559</p>
+                    <h3>Askild</h3>
+                    <p>Rolle: Best man 1/1</p>
+                    <p>Tlf: <a href="tel:+4797607364">+47 976 07 364</a></p>
                 </div>
 
                 <div class="person">
                     <img src="assets/kristin.jpg" alt="">
-                    <h3>Kristin Hoem Ovesen</h3>
-                    <p>Rolle: Best lady</p>
-                    <p>Tlf: +47 928 41 559</p>
+                    <h3>Kristin</h3>
+                    <p>Best lady 1/3</p>
+                    <p>Tlf: <a href="tel:+4798646097">+47 986 46 097</a></p>
                 </div>
 
                 <div class="person">
                     <img src="assets/anette.jpg" alt="">
-                    <h3>Anette Blakstad</h3>
-                    <p>Rolle: Best lady</p>
-                    <p>Tlf: +47 928 41 559</p>
+                    <h3>Anette</h3>
+                    <p>Best lady 2/3</p>
+                    <p>Tlf: <a href="tel:+4799497150">+47 994 97 150</a></p>
                 </div>
 
                 <div class="person">
                     <img src="assets/merete.jpg" alt="">
-                    <h3>Merete Havnvik</h3>
-                    <p>Rolle: Best lady</p>
-                    <p>Tlf: +47 928 41 559</p>
+                    <h3>Merete</h3>
+                    <p>Best lady 3/3</p>
+                    <p>Tlf: <a href="tel:+4747666770">+47 476 66 770</a></p>
                 </div>
             </div>
     </section>
@@ -505,7 +575,7 @@
     <section id="lokasjon">
         <div class="inner">
             <h2>Lokasjon</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1840.484367927072!2d7.719086777489597!3d62.52927867631907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46140bfae67a2ea7%3A0x9ab720b6faf37999!2sIsterdalsvegen%20102%2C%206300%20%C3%85ndalsnes!5e0!3m2!1sno!2sno!4v1735386280714!5m2!1sno!2sno" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe width="100%" height="500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1840.484367927072!2d7.719086777489597!3d62.52927867631907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46140bfae67a2ea7%3A0x9ab720b6faf37999!2sIsterdalsvegen%20102%2C%206300%20%C3%85ndalsnes!5e0!3m2!1sno!2sno!4v1735386280714!5m2!1sno!2sno" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 

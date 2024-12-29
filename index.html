@@ -108,8 +108,7 @@
             width: 100%;
             z-index: 1;
             background: transparent;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 55%,rgba(0,0,0,0.9) 100%)
-
+            background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,1) 100%);
         }
 
         header  .hamburger span {
@@ -163,6 +162,7 @@
             display: block;
             margin: 0;
             padding: .5rem;
+            background: rgba(0,0,0,.5);
         }
 
         header .rsvp-button {
@@ -170,13 +170,13 @@
             background: black;
             color: white;
             margin-top: 2rem;
-            border: 2px solid transparent;
+            border: 2px solid white;
           
             
         }
         header .rsvp-button:hover {
             text-decoration: underline;
-            border: 2px solid white;      
+            border: 2px solid wheat;      
             
         }
         header .rsvp-button:active {
@@ -189,6 +189,14 @@
             text-align: center;
             padding: 2rem 1rem 3rem 1rem;
             position: relative;
+        }
+
+        section.center {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
         }
 
         section::after {
@@ -258,7 +266,7 @@
             width: 2px;
             content: '';
             position: absolute;
-            top: 0px;
+            top: -10px;
             bottom: 0px;
             left: 5px;
         }
@@ -269,7 +277,7 @@
             background-repeat: no-repeat;
             background-size: contain;
             left: 0;
-            top: 20px;
+            top: 10px;
             width: 12px;
             height: 12px;
         }
@@ -303,6 +311,7 @@
             flex-wrap: wrap;
             align-items: flex-start;
             justify-content: center;
+            max-width: 1200px;
         }
 
         .person {
@@ -332,7 +341,8 @@
 
         #lokasjon iframe {
             /*filter: grayscale(50%) invert(95%);*/
-            filter: hue-rotate(-40deg);
+            filter: hue-rotate(-50deg);
+            border: 4px solid black;
         }
 
         .menu-container ul {
@@ -444,6 +454,22 @@
             display: block;
         }
 
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .bounce {
+            animation: bounce 1s ease 1;
+        }
+
     </style>
 </head>
 
@@ -458,7 +484,7 @@
             <div class="overlay"></div>
     </header>
 
-    <section id="program">
+    <section id="program" class="center">
         <div class="inner">
             <h2>Program</h2>
             <div class="program-container">
@@ -501,7 +527,7 @@
         </div>
     </section>
 
-    <section id="kontaktpersoner">
+    <section id="kontaktpersoner" class="center">
             <h2>Kontaktpersoner</h2>
             <div class="people-container">
                 <div class="person">
@@ -575,14 +601,14 @@
     <section id="lokasjon">
         <div class="inner">
             <h2>Lokasjon</h2>
-            <iframe width="100%" height="500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1840.484367927072!2d7.719086777489597!3d62.52927867631907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46140bfae67a2ea7%3A0x9ab720b6faf37999!2sIsterdalsvegen%20102%2C%206300%20%C3%85ndalsnes!5e0!3m2!1sno!2sno!4v1735386280714!5m2!1sno!2sno" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe width="100%" height="500px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d235807.5193691513!2d7.498502210096175!3d62.500758186933254!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46140bfae67a2ea7%3A0x9ab720b6faf37999!2sIsterdalsvegen%20102%2C%206300%20%C3%85ndalsnes!5e0!3m2!1sno!2sno!4v1735469334186!5m2!1sno!2sno"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
     <section id="gaver">
         <div class="inner">
             <h2>Gaver</h2>
-            <p>Tekst om gaver obladi oblada</p>
+            <p>Alt vi ønsker oss er at du kommer. Vi hverken trenger eller ønsker oss noe annet enn det. Vi skriver ikke dette for å være hippe. Vi mener det. </p>
         </div>
     </section>
 
@@ -620,6 +646,13 @@
             </ul>
         </nav>
     </footer>
-    
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.rsvp-button').classList.add('bounce');
+            }, 1500);
+        };
+    </script>
 </body>
 </html>

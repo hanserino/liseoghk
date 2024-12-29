@@ -87,7 +87,8 @@
         }
         
         header {
-            min-height: 100dvh;
+            height: 100vh;
+            height: 100dvh;
             background: url('assets/liseoghk.jpg') no-repeat top center;
             background-size: cover;
             text-align: center;
@@ -101,12 +102,14 @@
         }
 
         .overlay {
+            height: 100vh;
+            height: 100dvh;
+            width: 100%;
             position: absolute;
             top: 0;
             left: 0;
-            height: 100%;
-            width: 100%;
             z-index: 1;
+            pointer-events: none;
             background: transparent;
             background: linear-gradient(to bottom,  rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,1) 100%);
         }
@@ -137,7 +140,6 @@
         @media (min-width: 800px) {
             header {
                 background-position: 0 0%;
-                max-height: 80vh;
                 padding: 3rem 0 2rem 0;
             }
             .header-title {
@@ -552,9 +554,21 @@
                     <p>Tlf: <a href="tel:+4792841559">+47 928 41 559</a></p>
                 </div>
                 <div class="person">
+                    <img src="assets/edda.jpg" alt="">
+                    <h3>Edda</h3>
+                    <p>Bryllupskoordinator</p>
+                    <p>Tlf: <a href="tel:+4748105945">+47 481 05 945</a></p>
+                </div>
+                <div class="person">
+                    <img src="assets/pernille.jpg" alt="">
+                    <h3>Edda</h3>
+                    <p>Toastmaster</p>
+                    <p>Tlf: <a href="tel:+4747702033">+47 477 02 033</a></p>
+                </div>
+                <div class="person">
                     <img src="assets/askild.jpg" alt="">
                     <h3>Askild</h3>
-                    <p>Rolle: Best man 1/1</p>
+                    <p>Best man 1/1</p>
                     <p>Tlf: <a href="tel:+4797607364">+47 976 07 364</a></p>
                 </div>
 

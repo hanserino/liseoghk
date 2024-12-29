@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nb">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -372,9 +372,15 @@
             text-decoration: underline;
         }
 
+        
         footer {
             padding: 5rem 0 0 0;
             position: relative;
+            display: none;
+        }
+
+        .activeNav footer {
+            display: block;
         }
 
         nav {
@@ -478,7 +484,7 @@
 
 <body>
     <header id="intro">
-            <a class="hamburger" href="#nav" title="Vis navigasjonsmeny"><span></span><span></span><span></span></a>
+            <a id="headerHamburger" class="hamburger" href="#nav" title="Vis navigasjonsmeny"><span></span><span></span><span></span></a>
             <h1 class="header-title">Vi gifter oss! <br /> <span>23. aug 2025</span></h1>
             <div class="header-intro">
                 <p>Nest siste helg i august blir tiårets kuleste bryllup arrangert på Ytterbakke Gård i Romsdalen. Kommer du? Svarfrist 1. mai 2025.</p>
@@ -632,6 +638,7 @@
         <div class="inner">
             <p>Vi gleder oss til å se deg!</p>
             <a class="big-rsvp-link" target="_blank" href="https://forms.gle/vK4D7D2uyo8oMhAw7">RSVP</a>
+            <p>Mvh, <br / > Lise og HK</p>
         </div>
     </section>
 
@@ -655,6 +662,10 @@
             setTimeout(function() {
                 document.querySelector('.rsvp-button').classList.add('bounce');
             }, 1500);
+
+            document.querySelector('.hamburger').addEventListener('click', function() {
+                document.body.classList.add('activeNav'); // Toggle the activeNav class
+            });
         };
     </script>
 </body>
